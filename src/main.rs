@@ -35,7 +35,8 @@ impl ApplicationHandler for App {
                     return;
                 };
                 let size = window.inner_size();
-                let (Some(w), Some(h)) = (NonZeroU32::new(size.width), NonZeroU32::new(size.height))
+                let (Some(w), Some(h)) =
+                    (NonZeroU32::new(size.width), NonZeroU32::new(size.height))
                 else {
                     return;
                 };
@@ -74,7 +75,10 @@ fn run_update_cli(apply: bool) -> Result<(), String> {
 
 fn main() {
     let arg = std::env::args().nth(1);
-    if let Some(flag) = arg.as_deref().filter(|a| matches!(*a, "--check-update" | "--self-update")) {
+    if let Some(flag) = arg
+        .as_deref()
+        .filter(|a| matches!(*a, "--check-update" | "--self-update"))
+    {
         if let Err(e) = run_update_cli(flag == "--self-update") {
             eprintln!("update failed: {e}");
             std::process::exit(1);

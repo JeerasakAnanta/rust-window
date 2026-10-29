@@ -40,7 +40,11 @@ pub fn parse_release(json: &str) -> Result<Release, String> {
     };
     let installer_url = url_of("-setup.exe").ok_or("no installer asset")?;
     let sha256_url = url_of("-setup.exe.sha256").ok_or("no checksum asset")?;
-    Ok(Release { version, installer_url, sha256_url })
+    Ok(Release {
+        version,
+        installer_url,
+        sha256_url,
+    })
 }
 
 /// Returns the release only if it is newer than `current`.
