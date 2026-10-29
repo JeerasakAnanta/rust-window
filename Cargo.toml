@@ -1,0 +1,13 @@
+[package]
+name = "rust-window"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+hex = "0.4.3"
+semver = "1.0.28"
+serde_json = "1.0.154"
+sha2 = "0.11.1"
+softbuffer = "0.4.8"
+ureq = "3.5.0"
+winit = "0.30.13"
